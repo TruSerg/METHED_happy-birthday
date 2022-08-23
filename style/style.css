@@ -35,11 +35,18 @@ html {
 
 body {
 	font-family: 'Open Sans';
-	background: #FFF1F8;
 	display: flex;
 	flex-direction: column;
 	height: 100vh;
 	padding-bottom: 17px;
+}
+
+.women {
+	background: #FFF1F8;
+}
+
+.men {
+	background: #EFF9FE;
 }
 
 button {
@@ -81,12 +88,13 @@ a:hover {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
+	gap: 30px;
 }
 
 .header__button-change {
 	width: 300px;
 	height: 65px;
-	background: #C300C7;
+	background: transparent;
 	border-radius: 30px;
 	font-family: 'Open Sans';
 	border: none;
@@ -95,6 +103,23 @@ a:hover {
 	font-size: 18px;
 	color: #FFFFFF;
 	margin-right: 30px;
+	transition: background 0.3s ease-in-out;
+}
+
+.men .header__button-change {
+	background: #1178B2;
+}
+
+.women .header__button-change {
+	background: #C300C7;
+}
+
+.men .header__button-change:hover {
+	background: #1849c4;
+}
+
+.women .header__button-change:hover {
+	background: #9c069e;
 }
 
 .header__button-change:last-child {
@@ -127,9 +152,17 @@ a:hover {
 	background-image: url('../image/women.svg');
 }
 
+.men .header__button-gender--men {
+	border-color: #1178B2;
+}
+
+.women .header__button-gender--women {
+	border-color: #C300C7;
+}
+
 .card {
 	flex-grow: 1;
-	padding: 32px 0;
+	padding: 32px 0 15px;
 	display: flex;
 	align-items: center;
 }
@@ -154,6 +187,19 @@ a:hover {
 	font-size: max(3em, min(calc(100vw * 3 / 140), 6em));
 	font-family: 'Bad Script';
 	line-height: 1.6;
+}
+
+.women .card__text {
+	font-family: 'Bad Script';
+}
+
+.men .card__text {
+	font-family: 'Open Sans';
+	font-weight: 700;
+}
+
+.footer {
+	padding: 17px 0;
 }
 
 .footer__container {
@@ -194,7 +240,23 @@ a:hover {
 	color: #1849c4;
 }
 
-@media (max-width: 800px) {
+.men .footer__social-link svg {
+	color: #5273C8;
+}
+
+.men .footer__social-link svg:hover {
+	color: #1849c4;
+}
+
+.women .footer__social-link svg {
+	color: #C300C7;
+}
+
+.women .footer__social-link svg:hover {
+	color: #9c069e;
+}
+
+@media (max-width: 840px) {
 	.container {
 		padding: 0 10px;
 	}
